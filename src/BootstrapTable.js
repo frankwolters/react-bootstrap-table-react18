@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classSet from 'classnames';
-import Alert from 'react-s-alert';
 import Const from './Const';
 import TableHeaderColumn from './TableHeaderColumn';
 import TableHeader from './TableHeader';
@@ -16,6 +15,7 @@ import { TableDataStore } from './store/TableDataStore';
 import Util from './util';
 import exportCSVUtil from './csv_export_util';
 import { Filter } from './Filter';
+import { confirmAlert } from 'react-confirm-alert';
 
 
 class BootstrapTable extends Component {
@@ -544,7 +544,6 @@ class BootstrapTable extends Component {
         { showPaginationOnBottom ? pagination : null }
 
         { showToolbarOnBottom ? toolBar : null }
-        { this.props.renderAlert ? <Alert stack={ { limit: 3 } } /> : null }
       </div>
     );
   }
@@ -1045,15 +1044,21 @@ class BootstrapTable extends Component {
 
   handleDropRow = rowKeys => {
     const dropRowKeys = rowKeys ? rowKeys : this.store.getSelectedRowKeys();
-    // add confirm before the delete action if that option is set.
     if (dropRowKeys && dropRowKeys.length > 0) {
-      if (this.props.options.handleConfirmDeleteRow) {
-        this.props.options.handleConfirmDeleteRow(() => {
-          this.deleteRow(dropRowKeys);
-        }, dropRowKeys);
-      } else if (confirm('Are you sure you want to delete?')) {
-        this.deleteRow(dropRowKeys);
-      }
+      confirmAlert({
+        title: 'Confirm to delete',
+        message: 'Are you sure you want to delete?',
+        buttons: [
+          {
+            label: 'Yes',
+            onClick: () => this.deleteRow(dropRowKeys)
+          },
+          {
+            label: 'No',
+            onClick: () => {}
+          }
+        ]
+      });
     }
   }
 

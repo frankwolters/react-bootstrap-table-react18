@@ -1,11 +1,11 @@
 {
-  "name": "react-bootstrap-table",
-  "version": "4.3.1",
-  "description": "It's a react table for bootstrap",
+  "name": "react-bootstrap-table-react18",
+  "version": "0.0.1",
+  "description": "Experimental fork of react-bootstrap-table for react 18",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AllenFang/react-bootstrap-table.git"
+    "url": "https://github.com/frankwolters/react-bootstrap-table-react18.git"
   },
   "scripts": {
     "lint": "eslint src",
@@ -28,7 +28,7 @@
   "tags": [
     "react"
   ],
-  "author": "AllenFang",
+  "author": "FrankWolters",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -55,13 +55,13 @@
     "jest-cli": "^19.0.2",
     "jquery": "^2.1.4",
     "jsx-loader": "^0.13.2",
-    "react": "16.0.0",
+    "react": "18.0.0",
     "react-bootstrap": "0.31.3",
-    "react-dom": "16.0.0",
+    "react-dom": "18.0.0",
     "react-hot-loader": "^3.0.0-beta.6",
-    "react-router": "^3.2.0",
+    "react-router": "^5.3.4",
     "style-loader": "^0.13.0",
-    "styled-components": "^1.2.1",
+    "styled-components": "^5.3.11",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.0.0",
     "webpack": "^1.12.4",
@@ -70,11 +70,12 @@
   "dependencies": {
     "classnames": "^2.1.2",
     "prop-types": "^15.5.10",
-    "react-modal": "^3.1.7",
-    "react-s-alert": "^1.3.2"
+    "react-confirm-alert": "^3.0.6",
+    "react-modal": "^3.16.1",
+    "react-toastify": "^10.0.5"
   },
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0"
+    "react": "18.0.0"
   },
   "jest": {
     "testEnvironment": "node",
