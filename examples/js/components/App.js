@@ -1,9 +1,7 @@
 /* eslint max-len: 0 */
 import React from 'react';
-//import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import PropTypes from 'prop-types';
-//import 'react-s-alert/dist/s-alert-default.css';
-//import 'react-s-alert/dist/s-alert-css-effects/scale.css'; 
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import 'react-toastify/dist/ReactToastify.css';
 import '../../../css/react-bootstrap-table.css';
